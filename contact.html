@@ -3,23 +3,404 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <title>galmx | Contact Me</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">galmx</div>
+            <div class="loading-text">Establishing connection...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="about.html">📖 About</a></li>
-            <li><a href="contact.html">📩 Contact</a></li>
-        </ul>
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">galmx</div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="contact.html" class="nav-active"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="container">
-        <h1>📩 Contact Me</h1>
-        <p>DM me on Instagram or Discord!</p>
+        <header class="hero">
+            <h1 class="glitch fade-in-up" data-text="Contact">Contact</h1>
+            <p class="subtitle fade-in-up">Let's connect and collaborate</p>
+        </header>
+
+        <div class="contact-content">
+            <div class="contact-intro animate-card" data-delay="0">
+                <div class="intro-card">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <i class="fas fa-terminal"></i>
+                        <h2>Ready to Connect?</h2>
+                    </div>
+                    <p>Whether you're interested in cybersecurity collaboration, have questions about OSINT tools, or want to discuss the latest security trends, I'm always open to meaningful conversations.</p>
+                    <div class="response-time">
+                        <i class="fas fa-clock"></i>
+                        <span>Typically responds within 24 hours</span>
+                        <div class="pulse-ring"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-methods">
+                <h3><i class="fas fa-comments"></i> Preferred Contact Methods</h3>
+                
+                <div class="contact-grid">
+                    <!-- Discord -->
+                    <div class="contact-card priority animate-card" data-delay="0.1">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <i class="fab fa-discord"></i>
+                            <div class="method-info">
+                                <h4>Discord</h4>
+                                <span class="method-type">Real-time Chat</span>
+                            </div>
+                            <div class="status-badge online">
+                                <span class="status-dot"></span>
+                                Online
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="username" data-copy="galmx">galmx</p>
+                            <p class="description">Best for quick questions, real-time discussions, and cybersecurity chat</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="response-time">⚡ Instant response</span>
+                            <button class="copy-btn" onclick="copyToClipboard('galmx')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div class="contact-card animate-card" data-delay="0.2">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <i class="fab fa-instagram"></i>
+                            <div class="method-info">
+                                <h4>Instagram</h4>
+                                <span class="method-type">Direct Messages</span>
+                            </div>
+                            <div class="status-badge active">
+                                <span class="status-dot"></span>
+                                Active
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="username">@mlag</p>
+                            <p class="description">Casual conversations and behind-the-scenes updates</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://instagram.com/mlag" target="_blank" class="contact-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Send DM</span>
+                                <div class="btn-shine"></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ProtonMail -->
+                    <div class="contact-card animate-card" data-delay="0.3">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <i class="fas fa-envelope"></i>
+                            <div class="method-info">
+                                <h4>ProtonMail</h4>
+                                <span class="method-type">Secure Email</span>
+                            </div>
+                            <div class="status-badge encrypted">
+                                <span class="status-dot"></span>
+                                Encrypted
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="username" data-copy="galmx@protonmail.com">galmx@protonmail.com</p>
+                            <p class="description">Professional inquiries, collaboration proposals, and secure communication</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="mailto:galmx@protonmail.com" class="contact-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Email</span>
+                                <div class="btn-shine"></div>
+                            </a>
+                            <button class="copy-btn" onclick="copyToClipboard('galmx@protonmail.com')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="contact-card animate-card" data-delay="0.4">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <i class="fab fa-github"></i>
+                            <div class="method-info">
+                                <h4>GitHub</h4>
+                                <span class="method-type">Code & Issues</span>
+                            </div>
+                            <div class="status-badge active">
+                                <span class="status-dot"></span>
+                                Active
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="username">@xdrew87</p>
+                            <p class="description">Project discussions, bug reports, and code collaboration</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/xdrew87" target="_blank" class="contact-btn">
+                                <i class="fas fa-code"></i>
+                                <span>View Profile</span>
+                                <div class="btn-shine"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-guidelines animate-card" data-delay="0.5">
+                <h3><i class="fas fa-info-circle"></i> Contact Guidelines</h3>
+                <div class="guidelines-grid">
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Professional Inquiries</h4>
+                            <p>Use ProtonMail for business proposals, job opportunities, or formal collaboration requests</p>
+                        </div>
+                    </div>
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Technical Support</h4>
+                            <p>GitHub issues for bug reports, feature requests, or questions about my projects</p>
+                        </div>
+                    </div>
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Quick Chat</h4>
+                            <p>Discord for real-time discussions, cybersecurity questions, or casual conversations</p>
+                        </div>
+                    </div>
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Social</h4>
+                            <p>Instagram for personal updates, behind-the-scenes content, and casual interactions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="availability-section animate-card" data-delay="0.6">
+                <h3><i class="fas fa-calendar-alt"></i> Availability Status</h3>
+                <div class="availability-card">
+                    <div class="card-glow"></div>
+                    <div class="availability-header">
+                        <div class="timezone-info">
+                            <i class="fas fa-globe"></i>
+                            <span>Timezone: UTC-5 (EST)</span>
+                        </div>
+                        <div class="current-status">
+                            <span class="status-indicator online"></span>
+                            <span>Currently Available</span>
+                        </div>
+                    </div>
+                    <div class="availability-schedule">
+                        <div class="schedule-item">
+                            <span class="day">Mon - Fri</span>
+                            <span class="time">9:00 AM - 6:00 PM</span>
+                            <span class="type">Professional</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">Evenings</span>
+                            <span class="time">7:00 PM - 11:00 PM</span>
+                            <span class="type">Community</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">Weekends</span>
+                            <span class="time">Variable</span>
+                            <span class="type">Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-footer animate-card" data-delay="0.7">
+                <div class="footer-card">
+                    <div class="card-glow"></div>
+                    <div class="security-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="notice-content">
+                            <h4>Security Notice</h4>
+                            <p>For sensitive discussions, please use ProtonMail. I never share personal information and take privacy seriously. All communications are treated with confidentiality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-text">
+            <p>© 2025 galmx • Always connected, always secure</p>
+        </footer>
     </div>
 
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check"></i>
+        <span>Copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Enhanced particle system
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 75; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 15) + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Matrix rain effect
+        function initMatrixEffect() {
+            const canvas = document.getElementById('matrixCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+            const matrixArray = matrix.split("");
+            
+            const fontSize = 10;
+            const columns = canvas.width / fontSize;
+            
+            const drops = [];
+            for (let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00ff88';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            setInterval(draw, 35);
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // Enhanced glitch effect
+        function initGlitchEffect() {
+            const glitchText = document.querySelector('.glitch');
+            setInterval(() => {
+                glitchText.classList.add('glitch-active');
+                setTimeout(() => {
+                    glitchText.classList.remove('glitch-active');
+                }, 300);
+            }, 4000);
+        }
+
+        // Enhanced copy to clipboard with toast
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        // Toast notification
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Loading screen
+        function hideLoadingScreen() {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Update current time and status
+        function updateStatus() {
+            const now = new Date();
+            const hour = now.getHours();
+            const statusElement = document.querySelector('.current-status span:last-child');
+            const statusIndicator = document.querySelector('.status-indicator');
+            
+            if (hour >= 9 && hour <= 23) {
+                statusElement.textContent = 'Currently Available';
+                statusIndicator.className = 'status-indicator online';
+            } else {
+                statusElement.textContent = 'Currently Offline';
+                statusIndicator.className = 'status-indicator offline';
+            }
+        }
+
+        // Initialize all effects
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            initMatrixEffect();
+            initGlitchEffect();
+            hideLoadingScreen();
+            updateStatus();
+            
+            // Update status every minute
+            setInterval(updateStatus, 60000);
+        });
+    </script>
 </body>
 </html>

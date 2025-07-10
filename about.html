@@ -3,26 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>galmx | About Me</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">galmx</div>
+            <div class="loading-text">Loading profile...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="about.html">📖 About</a></li>
-            <li><a href="contact.html">📩 Contact</a></li>
-        </ul>
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">galmx</div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" class="nav-active"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="container">
-    <h1>📖 About Me</h1>
-    <p>Hey, I'm Suicixde one of the co-owners and lead developers at Frosted Services. I specialize in building secure, efficient web systems and am currently working on our upcoming network sniffer tool.</p>
-    <p>I'm passionate about cybersecurity even tho i am still learn, backend development, and creating tools that push the boundaries of what’s possible in the digital space. I enjoy experimenting with new technologies, building OSINT utilities, and optimizing network operations.</p>
-    <p>In my free time, I like exploring exploit development, designing user interfaces that blend utility with style, and staying updated with the latest in tech and infosec.</p>
-    <p>Follow me on my journey as I help shape the future of Frosted Services and beyond!</p>
-</div>
+        <header class="hero">
+            <h1 class="glitch fade-in-up" data-text="About Me">About Me</h1>
+            <p class="subtitle fade-in-up">Journey into the digital shadows</p>
+        </header>
 
+        <div class="about-content">
+            <div class="intro-section animate-card" data-delay="0">
+                <div class="profile-card">
+                    <div class="card-glow"></div>
+                    <div class="profile-header">
+                        <div class="avatar">
+                            <i class="fas fa-user-secret"></i>
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-pulse"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h2>galmx <span class="alias">(Suicixde)</span></h2>
+                            <p class="role">Co-Owner & Lead Developer @ Frosted Services</p>
+                            <div class="status-indicator">
+                                <span class="status-dot online"></span>
+                                <span class="status-text">Currently Active</span>
+                            </div>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Lines of Code</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">10+</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">24/7</span>
+                                    <span class="stat-label">Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-sections">
+                <div class="story-card animate-card" data-delay="0.1">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>The Journey Begins</h3>
+                        <p>Hey, I'm Suicixde, one of the co-owners and lead developers at Frosted Services. I specialize in building secure, efficient web systems and am currently working on our upcoming network sniffer tool. My path into cybersecurity started with curiosity and evolved into a passion for understanding how digital systems work.</p>
+                        <div class="story-tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Network Security</span>
+                            <span class="tag">System Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card animate-card" data-delay="0.2">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Passion for Security</h3>
+                        <p>I'm passionate about cybersecurity even though I'm still learning. Backend development and creating tools that push the boundaries of what's possible in the digital space drive my daily work. I enjoy experimenting with new technologies, building OSINT utilities, and optimizing network operations to stay ahead of threats.</p>
+                        <div class="story-tags">
+                            <span class="tag">OSINT</span>
+                            <span class="tag">Backend Development</span>
+                            <span class="tag">Threat Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card animate-card" data-delay="0.3">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Beyond the Code</h3>
+                        <p>In my free time, I explore exploit development, design user interfaces that blend utility with style, and stay updated with the latest in tech and infosec. Every vulnerability discovered and every tool built is a step forward in understanding the digital landscape.</p>
+                        <div class="story-tags">
+                            <span class="tag">Exploit Development</span>
+                            <span class="tag">UI/UX Design</span>
+                            <span class="tag">Research</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card featured animate-card" data-delay="0.4">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>The Future</h3>
+                        <p>Follow me on my journey as I help shape the future of Frosted Services and beyond! Together, we're building tools that matter, securing systems that protect, and pushing the boundaries of what's possible in cybersecurity.</p>
+                        <div class="story-tags">
+                            <span class="tag featured">Innovation</span>
+                            <span class="tag featured">Leadership</span>
+                            <span class="tag featured">Vision</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-showcase animate-card" data-delay="0.5">
+                <h3><i class="fas fa-tools"></i> Current Focus Areas</h3>
+                <div class="focus-grid">
+                    <div class="focus-item" data-skill="Network Analysis">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Network Analysis</span>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="75"></div>
+                        </div>
+                    </div>
+                    <div class="focus-item" data-skill="Exploit Development">
+                        <i class="fas fa-bug"></i>
+                        <span>Exploit Development</span>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="60"></div>
+                        </div>
+                    </div>
+                    <div class="focus-item" data-skill="OSINT Tools">
+                        <i class="fas fa-eye"></i>
+                        <span>OSINT Tools</span>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="focus-item" data-skill="Backend Systems">
+                        <i class="fas fa-server"></i>
+                        <span>Backend Systems</span>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="80"></div>
+                        </div>
+                    </div>
+                    <div class="focus-item" data-skill="Security Research">
+                        <i class="fas fa-lock"></i>
+                        <span>Security Research</span>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="70"></div>
+                        </div>
+                    </div>
+                    <div class="focus-item" data-skill="UI/UX Design">
+                        <i class="fas fa-palette"></i>
+                        <span>UI/UX Design</span>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="65"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-section animate-card" data-delay="0.6">
+                <h3><i class="fas fa-clock"></i> Journey Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>2023 - Started Cybersecurity Journey</h4>
+                            <p>Began exploring cybersecurity fundamentals and ethical hacking concepts</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>2024 - Founded Frosted Services</h4>
+                            <p>Co-founded cybersecurity platform focusing on OSINT and security tools</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker active"></div>
+                        <div class="timeline-content">
+                            <h4>2025 - Current Focus</h4>
+                            <p>Developing advanced network analysis tools and expanding security research</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="connect-section animate-card" data-delay="0.7">
+                <div class="card-glow"></div>
+                <h3><i class="fas fa-handshake"></i> Let's Connect</h3>
+                <p>Interested in collaboration, have questions about cybersecurity, or want to discuss the latest threats? I'm always open to connecting with fellow security enthusiasts and developers.</p>
+                <div class="connect-buttons">
+                    <a href="contact.html" class="connect-btn primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Get In Touch</span>
+                        <div class="btn-shine"></div>
+                    </a>
+                    <a href="https://github.com/xdrew87" target="_blank" class="connect-btn secondary">
+                        <i class="fab fa-github"></i>
+                        <span>View Projects</span>
+                        <div class="btn-shine"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-text">
+            <p>© 2025 galmx • Building the future, one line of code at a time</p>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced particle system
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 75; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 15) + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Matrix rain effect
+        function initMatrixEffect() {
+            const canvas = document.getElementById('matrixCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+            const matrixArray = matrix.split("");
+            
+            const fontSize = 10;
+            const columns = canvas.width / fontSize;
+            
+            const drops = [];
+            for (let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00ff88';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            setInterval(draw, 35);
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // Enhanced glitch effect
+        function initGlitchEffect() {
+            const glitchText = document.querySelector('.glitch');
+            setInterval(() => {
+                glitchText.classList.add('glitch-active');
+                setTimeout(() => {
+                    glitchText.classList.remove('glitch-active');
+                }, 300);
+            }, 4000);
+        }
+
+        // Skill progress animation
+        function animateSkillBars() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progress = entry.target.getAttribute('data-progress');
+                        entry.target.style.width = progress + '%';
+                    }
+                });
+            });
+            
+            progressBars.forEach(bar => observer.observe(bar));
+        }
+
+        // Loading screen
+        function hideLoadingScreen() {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Initialize all effects
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            initMatrixEffect();
+            initGlitchEffect();
+            animateSkillBars();
+            hideLoadingScreen();
+        });
+    </script>
 </body>
 </html>

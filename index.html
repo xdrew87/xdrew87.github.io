@@ -3,36 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Socials</title>
+    <title>galmx | Social Links</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- 🔹 Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="about.html">📖 About</a></li>
-            <li><a href="contact.html">📩 Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h1>📲 Connect with Me!</h1>
-        <p>Follow me on social media and stay connected!</p>
-        <div class="social-links">
-            <a href="https://instagram.com/xlsuixideix" class="instagram" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram (@xlsuixideix)
-            </a>
-            <a href="https://instagram.com/mlag" class="instagram" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram (@mlag)
-            </a>
-            <a href="https://discord.com/" class="discord" target="_blank">
-                <i class="fab fa-discord"></i> Discord (suicixde)
-            </a>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">galmx</div>
+            <div class="loading-text">Initializing connections...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
         </div>
     </div>
 
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">galmx</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <h1 class="glitch fade-in-up" data-text="Connect">Connect</h1>
+            <p class="subtitle fade-in-up">Find me across the digital landscape</p>
+        </header>
+
+        <div class="social-grid">
+            <!-- GitHub -->
+            <a href="https://github.com/xdrew87" class="social-card github animate-card" target="_blank" rel="noopener" data-delay="0">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <i class="fab fa-github"></i>
+                    <span class="platform">GitHub</span>
+                </div>
+                <div class="card-content">
+                    <h3>@xdrew87</h3>
+                    <p>Code repositories, OSINT tools, and security projects</p>
+                </div>
+                <div class="card-footer">
+                    <span class="status online">Active</span>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/mlag" class="social-card instagram animate-card" target="_blank" rel="noopener" data-delay="0.1">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <i class="fab fa-instagram"></i>
+                    <span class="platform">Instagram</span>
+                </div>
+                <div class="card-content">
+                    <h3>@mlag</h3>
+                    <p>Behind the scenes and personal updates</p>
+                </div>
+                <div class="card-footer">
+                    <span class="status active">Stories</span>
+                </div>
+            </a>
+
+            <!-- Discord -->
+            <a href="https://discord.com/" class="social-card discord animate-card" target="_blank" rel="noopener" data-delay="0.2">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <i class="fab fa-discord"></i>
+                    <span class="platform">Discord</span>
+                </div>
+                <div class="card-content">
+                    <h3>galmx</h3>
+                    <p>Real-time chat and cybersecurity discussions</p>
+                </div>
+                <div class="card-footer">
+                    <span class="status online">Online</span>
+                </div>
+            </a>
+
+            <!-- Twitter -->
+            <a href="https://twitter.com/@galmxsec" class="social-card twitter animate-card" target="_blank" rel="noopener" data-delay="0.3">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <i class="fab fa-twitter"></i>
+                    <span class="platform">Twitter</span>
+                </div>
+                <div class="card-content">
+                    <h3>@galmxsec</h3>
+                    <p>Cybersecurity insights and threat intelligence</p>
+                </div>
+                <div class="card-footer">
+                    <span class="status active">Tweeting</span>
+                </div>
+            </a>
+
+            <!-- ProtonMail -->
+            <a href="mailto:galmx@protonmail.com" class="social-card email animate-card" data-delay="0.4">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <i class="fas fa-envelope"></i>
+                    <span class="platform">ProtonMail</span>
+                </div>
+                <div class="card-content">
+                    <h3>galmx@protonmail.com</h3>
+                    <p>Secure communication and professional inquiries</p>
+                </div>
+                <div class="card-footer">
+                    <span class="status encrypted">Encrypted</span>
+                </div>
+            </a>
+
+            <!-- Portfolio -->
+            <a href="../portflio/index.html" class="social-card portfolio animate-card" data-delay="0.5">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <i class="fas fa-code"></i>
+                    <span class="platform">Portfolio</span>
+                </div>
+                <div class="card-content">
+                    <h3>Cybersecurity Portfolio</h3>
+                    <p>Projects, tools, and professional showcase</p>
+                </div>
+                <div class="card-footer">
+                    <span class="status featured">Featured</span>
+                </div>
+            </a>
+
+            <!-- GitHub Pages -->
+            <a href="https://xdrew87.github.io/galmx/" class="social-card github-pages animate-card" target="_blank" rel="noopener" data-delay="0.6">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <i class="fas fa-globe"></i>
+                    <span class="platform">GitHub Pages</span>
+                </div>
+                <div class="card-content">
+                    <h3>galmx Site</h3>
+                    <p>Live cybersecurity portfolio and project showcase</p>
+                </div>
+                <div class="card-footer">
+                    <span class="status online">Live</span>
+                </div>
+            </a>
+        </div>
+
+        <footer class="footer-text">
+            <p>© 2025 galmx • Always connected, always secure</p>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced particle system
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 75; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 15) + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Matrix rain effect
+        function initMatrixEffect() {
+            const canvas = document.getElementById('matrixCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+            const matrixArray = matrix.split("");
+            
+            const fontSize = 10;
+            const columns = canvas.width / fontSize;
+            
+            const drops = [];
+            for (let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00ff88';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            setInterval(draw, 35);
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // Enhanced glitch effect
+        function initGlitchEffect() {
+            const glitchText = document.querySelector('.glitch');
+            setInterval(() => {
+                glitchText.classList.add('glitch-active');
+                setTimeout(() => {
+                    glitchText.classList.remove('glitch-active');
+                }, 300);
+            }, 4000);
+        }
+
+        // Loading screen
+        function hideLoadingScreen() {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Card hover sound effect (optional)
+        function addSoundEffects() {
+            const cards = document.querySelectorAll('.social-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    // Optional: Add subtle hover sound
+                });
+            });
+        }
+
+        // Initialize all effects
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            initMatrixEffect();
+            initGlitchEffect();
+            hideLoadingScreen();
+            addSoundEffects();
+        });
+    </script>
 </body>
 </html>
