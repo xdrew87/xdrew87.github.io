@@ -2,37 +2,209 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Socials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>xdrew87 | Cybersecurity & Software Development | Python Developer & Open-Source Contributor</title>
+    <meta name="description" content="Professional cybersecurity engineer and full-stack developer. Specializing in Python, OSINT, digital forensics, and building open-source security tools.">
+    <meta name="author" content="xdrew87 (galmx)">
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="keywords" content="cybersecurity, Python, OSINT, digital forensics, security tools, open-source, software development, penetration testing">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="xdrew87 - Professional Cybersecurity Developer">
+    <meta property="og:description" content="Explore 24+ public security tools and software projects. Specialized in OSINT, network security, and digital forensics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xdrew87.github.io">
+    <meta property="og:image" content="https://xdrew87.github.io/preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@galmxsec">
+    <meta name="twitter:title" content="xdrew87 - Cybersecurity Developer">
+    <meta name="twitter:description" content="Professional cybersecurity tools and open-source projects">
+    <link rel="canonical" href="https://xdrew87.github.io">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%230f0f23' width='180' height='180'/><text y='120' font-size='140' x='50'>🔒</text></svg>">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<body>
-
-    <!-- 🔹 Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="about.html">📖 About</a></li>
-            <li><a href="contact.html">📩 Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h1>📲 Connect with Me!</h1>
-        <p>Follow me on social media and stay connected!</p>
-        <div class="social-links">
-            <a href="https://instagram.com/xlsuixideix" class="instagram" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram (@xlsuixideix)
-            </a>
-            <a href="https://instagram.com/mlag" class="instagram" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram (@mlag)
-            </a>
-            <a href="https://discord.com/" class="discord" target="_blank">
-                <i class="fab fa-discord"></i> Discord (suicixde)
-            </a>
+<body id="top">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span>🔒</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Initializing connections...</div>
         </div>
     </div>
 
+    <!-- Navigation Bar -->
+    <nav role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active" aria-current="page">🏠 Projects</a></li>
+            <li><a href="about.html" class="nav-link" aria-label="About xdrew87">📖 About</a></li>
+            <li><a href="games.html" class="nav-link" aria-label="Play games">🎮 Games</a></li>
+            <li><a href="contact.html" class="nav-link" aria-label="Contact information">📩 Contact</a></li>
+        </ul>
+    </nav>
+
+    <header role="banner">
+        <canvas id="network-canvas" aria-hidden="true"></canvas>
+        <div class="header-content">
+            <h1 class="glitch" data-text="🔒 Cybersecurity & Software Development">🔒 Cybersecurity & Software Development</h1>
+            <p class="header-tagline">Building open-source security tools and innovative solutions</p>
+            <p class="header-subtitle" aria-live="polite"><span class="project-count">24+</span> Public Projects | Python | Security Research | Open-Source Contributor</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="stats" aria-label="Portfolio statistics">
+            <div class="stat">
+                <div class="stat-number" id="github-count">24+</div>
+                <div class="stat-label">Public Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">🐍</div>
+                <div class="stat-label">Primary Language</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">⚡</div>
+                <div class="stat-label">Full-Stack Dev</div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">💻 Technical Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>🔐 Security</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Cryptography</span>
+                        <span class="skill-tag">OSINT</span>
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Vulnerability Testing</span>
+                        <span class="skill-tag">Penetration Testing</span>
+                        <span class="skill-tag">Threat Intelligence</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🛠️ Back-End</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Databases</span>
+                        <span class="skill-tag">Server Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🌐 Front-End</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">UI/UX</span>
+                        <span class="skill-tag">Web Performance</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>⚙️ DevOps & Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">VPS Management</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Command Line</span>
+                        <span class="skill-tag">N8N Workflow Automation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🤖 Specializations</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Discord Bots</span>
+                        <span class="skill-tag">Automation</span>
+                        <span class="skill-tag">Data Aggregation</span>
+                        <span class="skill-tag">Monitoring Systems</span>
+                        <span class="skill-tag">File Operations</span>
+                        <span class="skill-tag">Network Tools</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📊 Analysis & Research</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Digital Forensics</span>
+                        <span class="skill-tag">Log Analysis</span>
+                        <span class="skill-tag">SIEM</span>
+                        <span class="skill-tag">Threat Modeling</span>
+                        <span class="skill-tag">Security Research</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">🚀 Featured & Recent Projects</h2>
+            
+            <!-- Project Filters -->
+            <div class="filter-container" role="group" aria-label="Project category filters">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All Projects</button>
+                <button class="filter-btn" data-filter="security" aria-pressed="false">Security</button>
+                <button class="filter-btn" data-filter="network" aria-pressed="false">Networking</button>
+                <button class="filter-btn" data-filter="analysis" aria-pressed="false">Analysis</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="tools-grid" role="list" aria-live="polite" aria-label="GitHub projects">
+                <!-- Dynamically populated by GitHub API -->
+            </div>
+        </section>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>xdrew87</h3>
+                <p>Cybersecurity engineer and open-source developer focused on building tools that matter.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/xdrew87" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="https://osintintelligence.xyz/" target="_blank" rel="noopener noreferrer">OSINT Intelligence</a></li>
+                    <li><a href="https://suicixde.xyz/" target="_blank" rel="noopener noreferrer">API Platform</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://twitter.com/galmxsec" target="_blank" rel="noopener noreferrer">Twitter (@galmxsec)</a></li>
+                    <li><a href="https://discord.com/users/galmx" target="_blank" rel="noopener noreferrer">Discord (galmx)</a></li>
+                    <li><a href="mailto:xdrew87@suicixde.xyz">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 xdrew87 | Built with HTML5, CSS3 & JavaScript</p>
+            <p><a href="#top" class="back-to-top">↑ Back to top</a></p>
+        </div>
+    </footer>
+
+    <script src="js/matrix.js" defer></script>
+    <script src="js/loading.js" defer></script>
+    <script src="js/glitch.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

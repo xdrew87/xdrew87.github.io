@@ -3,24 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About xdrew87 - Cybersecurity Developer & Software Engineer</title>
+    <meta name="description" content="Learn about xdrew87 - A cybersecurity developer and open-source contributor with expertise in security tools and software development.">
+    <meta name="author" content="xdrew87">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
 </head>
 <body>
-
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span>🔒</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Initializing connections...</div>
+        </div>
+    </div>
     <nav>
         <ul>
-            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="index.html">🏠 Projects</a></li>
             <li><a href="about.html">📖 About</a></li>
+            <li><a href="games.html">🎮 Games</a></li>
             <li><a href="contact.html">📩 Contact</a></li>
         </ul>
     </nav>
 
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
     <div class="container">
-        <h1>📖 About Me</h1>
-        <p>Hi! I'm a content creator and social media enthusiast.</p>
-        <p>Follow me on my journey!</p>
+        <h1>📖 About xdrew87</h1>
+
+        <section style="margin-top: 2rem;">
+            <div class="about-content">
+                <h3>Hey there! 👋</h3>
+                <p>I'm <strong>xdrew87</strong>, a passionate cybersecurity developer and open-source contributor based in the digital realm. I specialize in creating practical security tools and utilities designed to protect digital assets and enhance cybersecurity practices for individuals and organizations.</p>
+
+                <h3 style="margin-top: 1.5rem;">My Journey</h3>
+                <p>With deep expertise in cybersecurity fundamentals and software development, I've built over 34 open-source projects ranging from network security tools to data analysis platforms. My work is driven by a mission to make enterprise-grade security accessible to everyone through open-source solutions.</p>
+
+                <h3 style="margin-top: 1.5rem;">What I Do</h3>
+                <p>I focus on developing:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>🔐 <strong>Security Tools</strong> - Vulnerability scanners, breach checkers, encryption utilities</li>
+                    <li>🌐 <strong>Network Solutions</strong> - Port scanners, monitoring systems, threat detection</li>
+                    <li>📊 <strong>Analysis Platforms</strong> - OSINT tools, log analyzers, data aggregation systems</li>
+                    <li>🤖 <strong>Automation</strong> - Security bots, automated monitoring, incident response</li>
+                    <li>🛡️ <strong>Compliance Tools</strong> - SIEM systems, audit logging, security intelligence</li>
+                </ul>
+
+                <h3 style="margin-top: 1.5rem;">Philosophy</h3>
+                <p>I believe in the power of open-source software to democratize cybersecurity. Every tool I create is designed to be practical, transparent, and community-driven. I'm committed to:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>🔓 Creating transparent, auditable code</li>
+                    <li>🤝 Building collaborative communities</li>
+                    <li>📚 Sharing knowledge and best practices</li>
+                    <li>🚀 Advancing cybersecurity for all</li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 3rem; text-align: center;">💡 Areas of Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Cybersecurity</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Penetration Testing</span>
+                        <span class="skill-tag">Vulnerability Assessment</span>
+                        <span class="skill-tag">Threat Analysis</span>
+                        <span class="skill-tag">Security Architecture</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Full-Stack</span>
+                        <span class="skill-tag">APIs</span>
+                        <span class="skill-tag">Databases</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Infrastructure</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Linux/Unix</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Cloud Platforms</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Specializations</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">OSINT</span>
+                        <span class="skill-tag">Automation</span>
+                        <span class="skill-tag">BOT Development</span>
+                        <span class="skill-tag">Forensics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content" style="margin-top: 2rem;">
+                <h3>Let's Connect! 🔗</h3>
+                <p>I'm always excited about collaborating on security projects, discussing research findings, or helping the community. Whether you're interested in my tools, want to contribute, or just want to chat about cybersecurity:</p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://github.com/xdrew87" class="btn btn-primary" target="_blank">GitHub Profile</a>
+                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </section>
     </div>
 
+    <footer>
+        <p>&copy; 2026 xdrew87 | Cybersecurity Developer & Open-Source Contributor</p>
+        <div class="footer-links">
+            <a href="https://github.com/xdrew87" target="_blank">GitHub</a>
+            <a href="https://osintintelligence.xyz/" target="_blank">OSINT Intelligence</a>
+            <a href="https://suicixde.xyz/" target="_blank">API Platform</a>
+            <a href="index.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+    <script src="js/matrix.js" defer></script>
+    <script src="js/loading.js" defer></script>
+    <script src="js/glitch.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
